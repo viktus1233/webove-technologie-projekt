@@ -1,71 +1,79 @@
-/* Index.html */
-body#index {
-    background-color: #f2f2f2;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-section#index-main {
-    padding: 20px;
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
     text-align: center;
 }
 
-section#index-main h1 {
-    color: #333;
+nav ul {
+    list-style: none;
+    padding: 0;
 }
 
-section#index-main p {
-    color: #666;
+nav ul li {
+    display: inline;
+    margin-right: 1em;
 }
 
-/* About.html */
-body#about {
-    background-color: #fff;
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
 }
 
-section#about-main {
-    padding: 20px;
+main {
+    padding: 1em;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
     text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
 
-section#about-main h1 {
-    color: #333;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
 }
 
-section#about-main p {
-    color: #666;
+table, th, td {
+    border: 1px solid #ddd;
 }
 
-/* Gallery.html */
-body#gallery {
-    background-color: #f9f9f9;
+th, td {
+    padding: 0.5em;
+    text-align: left;
 }
 
-section#gallery-main {
-    padding: 20px;
-    text-align: center;
+.gallery img {
+    width: 200px;
+    margin: 1em;
 }
 
-section#gallery-main h1 {
-    color: #333;
+#reservation-form {
+    display: flex;
+    flex-direction: column;
 }
 
-section#gallery-main p {
-    color: #666;
+#reservation-form label {
+    margin-top: 1em;
 }
 
-/* Reservation.html */
-body#reservation {
-    background-color: #f6f6f6;
-}
-
-section#reservation-main {
-    padding: 20px;
-    text-align: center;
-}
-
-section#reservation-main h1 {
-    color: #333;
-}
-
-section#reservation-main p {
-    color: #666;
+#reservation-form input, 
+#reservation-form select, 
+#reservation-form textarea, 
+#reservation-form button {
+    margin-top: 0.5em;
+    padding: 0.5em;
+    font-size: 1em;
 }
