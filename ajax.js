@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $.ajax({
-        url: 'reservations.json',
+        url: 'reservation.json',
         dataType: 'json',
         success: function(data) {
             var reservations = data.reservations;
