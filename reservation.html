@@ -21,39 +21,74 @@
         </nav>
     </header>
     <main>
-        <h2>Rezervujte si apartmán</h2>
-        <form id="reservation-form">
-            <label for="name">Meno:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="arrival">Dátum príchodu:</label>
-            <input type="date" id="arrival" name="arrival" required>
-            
-            <label for="nights">Počet nocí:</label>
-            <input type="number" id="nights" name="nights" required min="1">
-            
-            <label for="room-type">Typ izby:</label>
-            <select id="room-type" name="room-type">
-                <option value="Single">Jednolôžková</option>
-                <option value="Double">Dvojlôžková</option>
-                <option value="Suite">Apartmán</option>
-            </select>
-            
-            <label for="breakfast">Raňajky:</label>
-            <input type="checkbox" id="breakfast" name="breakfast">
-            
-            <label for="requests">Špeciálne požiadavky:</label>
-            <textarea id="requests" name="requests"></textarea>
-            
-            <button type="submit">Rezervovať</button>
-        </form>
-    </main>
-    <footer>
-        <p>&copy; 2024 Apartmán Rezervácie</p>
-    </footer>
-    <script src="js/script.js"></script>
+        <h1>Registračný formulár</h1>
+    <form id="registrationForm">
+        <label for="name">Meno:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="password">Heslo:</label><br>
+        <input type="password" id="password" name="password" minlength="8" required><br><br>
+        
+        <label for="confirmPassword">Potvrďte heslo:</label><br>
+        <input type="password" id="confirmPassword" name="confirmPassword" minlength="8" required><br><br>
+        
+        <label for="gender">Pohlavie:</label><br>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Muž</label><br>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Žena</label><br><br>
+        
+        <label for="age">Vek:</label><br>
+        <input type="number" id="age" name="age" min="18" max="100" required><br><br>
+        
+        <label for="terms">Súhlasím s podmienkami:</label>
+        <input type="checkbox" id="terms" name="terms" required><br><br>
+        
+        <input type="submit" value="Registrovať sa">
+    </form>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Získanie údajov z formulára
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var gender = document.querySelector('input[name="gender"]:checked').value;
+            var age = document.getElementById("age").value;
+            var terms = document.getElementById("terms").checked;
+
+            // Kontrola zhody hesiel
+            if (password !== confirmPassword) {
+                alert("Heslá sa nezhodujú. Skúste to prosím znova.");
+                return;
+            }
+
+            // Kontrola správnosti emailu
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Prosím, zadajte platnú emailovú adresu.");
+                return;
+            }
+
+            // Kontrola súhlasu s podmienkami
+            if (!terms) {
+                alert("Pre pokračovanie musíte súhlasiť s podmienkami.");
+                return;
+            }
+
+            // Ak všetky kontroly prebehli úspešne, môžeme odoslať formulár
+            // Tu môžete vykonať ďalšie akcie, ako napríklad odoslanie údajov na server
+            alert("Registrácia úspešná! Údaje odoslané na server.");
+
+            // Resetovanie formulára po úspešnej registrácii
+            document.getElementById("registrationForm").reset();
+        });
+    </script>
 </body>
 </html>
