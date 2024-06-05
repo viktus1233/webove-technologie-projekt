@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Rezervácia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Rezervácie</title>
 </head>
 <body>
     <header>
-        <h1>Rezervácia</h1>
+        <h1>Rezervácie</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Domov</a></li>
@@ -21,74 +21,30 @@
         </nav>
     </header>
     <main>
-        <h1>Registračný formulár</h1>
-    <form id="registrationForm">
-        <label for="name">Meno:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-        
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <label for="password">Heslo:</label><br>
-        <input type="password" id="password" name="password" minlength="8" required><br><br>
-        
-        <label for="confirmPassword">Potvrďte heslo:</label><br>
-        <input type="password" id="confirmPassword" name="confirmPassword" minlength="8" required><br><br>
-        
-        <label for="gender">Pohlavie:</label><br>
-        <input type="radio" id="male" name="gender" value="male" required>
-        <label for="male">Muž</label><br>
-        <input type="radio" id="female" name="gender" value="female" required>
-        <label for="female">Žena</label><br><br>
-        
-        <label for="age">Vek:</label><br>
-        <input type="number" id="age" name="age" min="18" max="100" required><br><br>
-        
-        <label for="terms">Súhlasím s podmienkami:</label>
-        <input type="checkbox" id="terms" name="terms" required><br><br>
-        
-        <input type="submit" value="Registrovať sa">
-    </form>
-
-    <script>
-        document.getElementById("registrationForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            // Získanie údajov z formulára
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            var confirmPassword = document.getElementById("confirmPassword").value;
-            var gender = document.querySelector('input[name="gender"]:checked').value;
-            var age = document.getElementById("age").value;
-            var terms = document.getElementById("terms").checked;
-
-            // Kontrola zhody hesiel
-            if (password !== confirmPassword) {
-                alert("Heslá sa nezhodujú. Skúste to prosím znova.");
-                return;
-            }
-
-            // Kontrola správnosti emailu
-            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                alert("Prosím, zadajte platnú emailovú adresu.");
-                return;
-            }
-
-            // Kontrola súhlasu s podmienkami
-            if (!terms) {
-                alert("Pre pokračovanie musíte súhlasiť s podmienkami.");
-                return;
-            }
-
-            // Ak všetky kontroly prebehli úspešne, môžeme odoslať formulár
-            // Tu môžete vykonať ďalšie akcie, ako napríklad odoslanie údajov na server
-            alert("Registrácia úspešná! Údaje odoslané na server.");
-
-            // Resetovanie formulára po úspešnej registrácii
-            document.getElementById("registrationForm").reset();
-        });
-    </script>
+        <h2>Aktuálne rezervácie</h2>
+        <table id="reservations-table">
+            <thead>
+                <tr>
+                    <th>Meno</th>
+                    <th>Email</th>
+                    <th>Dátum príchodu</th>
+                    <th>Počet nocí</th>
+                    <th>Typ izby</th>
+                    <th>Raňajky</th>
+                    <th>Požiadavky</th>
+                    <th>Potvrdené</th>
+                    <th>Zaplatené</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dáta budú načítané cez JavaScript -->
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2024 Apartmán Rezervácie</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/ajax.js"></script>
 </body>
 </html>
