@@ -57,14 +57,13 @@
             var reservationsBody = document.getElementById('reservations-body');
             data.reservations.forEach(function(reservation) {
                 var row = '<tr>' +
-                    '<td>' + reservation.id + '</td>' +
                     '<td>' + reservation.name + '</td>' +
                     '<td>' + reservation.email + '</td>' +
-                    '<td>' + reservation.arrivalDate + '</td>' +
-                    '<td>' + reservation.numberOfNights + '</td>' +
+                    '<td>' + reservation.arrival + '</td>' +
+                    '<td>' + reservation.nights + '</td>' +
                     '<td>' + reservation.roomType + '</td>' +
                     '<td>' + (reservation.breakfast ? 'Áno' : 'Nie') + '</td>' +
-                    '<td>' + reservation.specialRequests + '</td>' +
+                    '<td>' + reservation.requests + '</td>' +
                     '<td>' + (reservation.confirmed ? 'Áno' : 'Nie') + '</td>' +
                     '<td>' + (reservation.paid ? 'Áno' : 'Nie') + '</td>' +
                     '</tr>';
