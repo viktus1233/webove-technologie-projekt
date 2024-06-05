@@ -3,57 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vytvorenie novej rezervácie</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Rezervácia</title>
 </head>
 <body>
-    <header>
-        <h1>Rezervácia</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Domov</a></li>
-                <li><a href="about.html">O nás</a></li>
-                <li><a href="gallery.html">Galéria</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-                <li><a href="reservation.html">Rezervácia</a></li>
-                <li><a href="reservations.html">Rezervácie</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>Rezervujte si apartmán</h2>
-        <form id="reservation-form">
-            <label for="name">Meno:</label>
-            <input type="text" id="name" name="name" required>
+    <h1>Vytvorenie novej rezervácie</h1>
+    <div class="form-container">
+        <form id="reservationForm">
+            <label for="name">Meno:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
             
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
             
-            <label for="arrival">Dátum príchodu:</label>
-            <input type="date" id="arrival" name="arrival" required>
+            <label for="arrivalDate">Dátum príchodu:</label><br>
+            <input type="date" id="arrivalDate" name="arrivalDate" required><br><br>
             
-            <label for="nights">Počet nocí:</label>
-            <input type="number" id="nights" name="nights" required min="1">
+            <label for="numberOfNights">Počet nocí:</label><br>
+            <input type="number" id="numberOfNights" name="numberOfNights" min="1" required><br><br>
             
-            <label for="room-type">Typ izby:</label>
-            <select id="room-type" name="room-type">
-                <option value="Single">Jednolôžková</option>
-                <option value="Double">Dvojlôžková</option>
-                <option value="Suite">Apartmán</option>
-            </select>
+            <label for="roomType">Typ izby:</label><br>
+            <select id="roomType" name="roomType" required>
+                <option value="Single">Single</option>
+                <option value="Double">Double</option>
+                <option value="Suite">Suite</option>
+            </select><br><br>
             
             <label for="breakfast">Raňajky:</label>
-            <input type="checkbox" id="breakfast" name="breakfast">
+            <input type="checkbox" id="breakfast" name="breakfast"><br><br>
             
-            <label for="requests">Špeciálne požiadavky:</label>
-            <textarea id="requests" name="requests"></textarea>
+            <label for="specialRequests">Špeciálne požiadavky:</label><br>
+            <textarea id="specialRequests" name="specialRequests"></textarea><br><br>
             
-            <button type="submit">Rezervovať</button>
+            <input type="submit" value="Vytvoriť rezerváciu">
         </form>
-    </main>
-    <footer>
-        <p>&copy; 2024 Apartmán Rezervácie</p>
-    </footer>
-    <script src="js/script.js"></script>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
