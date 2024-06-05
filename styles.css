@@ -1,8 +1,8 @@
 /* Základné nastavenia */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
     color: #333;
     margin: 0;
     padding: 0;
@@ -17,8 +17,8 @@ body {
 /* Nadpisy a odseky */
 
 h1, h2, h3 {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    color: #0056b3;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
 }
 
 h1 {
@@ -38,7 +38,7 @@ h3 {
 
 p {
     font-size: 1em;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 15px;
 }
 
@@ -66,6 +66,7 @@ a:hover {
     font-size: 1em;
     text-align: center;
     text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
 .button:hover {
@@ -89,6 +90,7 @@ a:hover {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1em;
 }
 
 .textarea {
@@ -120,7 +122,7 @@ a:hover {
 }
 
 .gallery-item img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* Responsívny layout */
