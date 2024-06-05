@@ -21,30 +21,56 @@
         </nav>
     </header>
     <main>
-        <h2>Aktuálne rezervácie</h2>
-        <table id="reservations-table">
-            <thead>
-                <tr>
-                    <th>Meno</th>
-                    <th>Email</th>
-                    <th>Dátum príchodu</th>
-                    <th>Počet nocí</th>
-                    <th>Typ izby</th>
-                    <th>Raňajky</th>
-                    <th>Požiadavky</th>
-                    <th>Potvrdené</th>
-                    <th>Zaplatené</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Dáta budú načítané cez JavaScript -->
-            </tbody>
-        </table>
-    </main>
-    <footer>
-        <p>&copy; 2024 Apartmán Rezervácie</p>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/ajax.js"></script>
+    <h2>Rezervácie</h2>
+    <table id="reservations-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Meno</th>
+                <th>Email</th>
+                <th>Dátum príchodu</th>
+                <th>Počet nocí</th>
+                <th>Typ izby</th>
+                <th>Raňajky</th>
+                <th>Požiadavky</th>
+                <th>Potvrdené</th>
+                <th>Zaplatené</th>
+            </tr>
+        </thead>
+        <tbody id="reservations-body">
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    displayReservations(JSON.parse(this.responseText));
+                }
+            };
+            xhttp.open("GET", "reservation.json", true);
+            xhttp.send();
+        });
+
+        function displayReservations(data) {
+            var reservationsBody = document.getElementById('reservations-body');
+            data.reservations.forEach(function(reservation) {
+                var row = '<tr>' +
+                    '<td>' + reservation.id + '</td>' +
+                    '<td>' + reservation.name + '</td>' +
+                    '<td>' + reservation.email + '</td>' +
+                    '<td>' + reservation.arrivalDate + '</td>' +
+                    '<td>' + reservation.numberOfNights + '</td>' +
+                    '<td>' + reservation.roomType + '</td>' +
+                    '<td>' + (reservation.breakfast ? 'Áno' : 'Nie') + '</td>' +
+                    '<td>' + reservation.specialRequests + '</td>' +
+                    '<td>' + (reservation.confirmed ? 'Áno' : 'Nie') + '</td>' +
+                    '<td>' + (reservation.paid ? 'Áno' : 'Nie') + '</td>' +
+                    '</tr>';
+                reservationsBody.innerHTML += row;
+            });
+        }
+    </script>
 </body>
 </html>
