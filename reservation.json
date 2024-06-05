@@ -1,0 +1,30 @@
+{
+    "reservations": [
+        {
+            "name": "John Doe",
+            "email": "john.doe@example.com",
+            "arrival": "2024-06-10",
+            "nights": 5,
+            "roomType": "Apartmán",
+            "breakfast": true,
+            "requests": "Neskorý check-in",
+            "status": {
+                "confirmed": true,
+                "paid": true
+            }
+        },
+        {
+            "name": "Jane Smith",
+            "email": "jane.smith@example.com",
+            "arrival": "2024-07-15",
+            "nights": 3,
+            "roomType": "Dvojlôžková",
+            "breakfast": false,
+            "requests": "Výhľad na more",
+            "status": {
+                "confirmed": true,
+                "paid": false
+            }
+        }
+    ]
+}
