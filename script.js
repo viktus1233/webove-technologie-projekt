@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Funkcia načítania existujúcich rezervácií z JSON súboru
 function loadReservations() {
-    fetch('reservations.json')
+    fetch('reservation.json')
         .then(response => response.json())
         .then(data => displayReservations(data.reservations))
         .catch(error => console.error('Nastala chyba:', error));
@@ -46,7 +46,7 @@ function loadReservations() {
 
 // Funkcia pridania novej rezervácie do JSON súboru
 function addReservation(newReservation) {
-    fetch('reservations.json', {
+    fetch('reservation.json', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
