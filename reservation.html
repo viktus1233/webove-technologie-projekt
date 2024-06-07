@@ -10,6 +10,16 @@
             color: red;
             display: none;
         }
+        #message {
+            display: none;
+            margin-top: 20px;
+        }
+        #message.success {
+            color: green;
+        }
+        #message.error {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -55,6 +65,7 @@
             
             <button type="submit">Rezervovať</button>
         </form>
+        <div id="message"></div>
     </main>
     <footer>
         <p>&copy; 2024 Apartmán Rezervácie</p>
