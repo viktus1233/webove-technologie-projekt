@@ -55,3 +55,21 @@ document.getElementById('reservation-form').addEventListener('submit', function(
         event.preventDefault();
     }
 });
+
+document.getElementById("reservation-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    // Validácia formulára
+    
+    // Ak je formulár správne vyplnený, zobrazíme úspešnú správu
+    var messageElement = document.getElementById("message");
+    messageElement.textContent = "Formulár bol úspešne odoslaný!";
+    messageElement.className = "success";
+    messageElement.style.display = "block";
+    
+    // Inak zobrazíme chybovú správu
+    // var messageElement = document.getElementById("message");
+    // messageElement.textContent = "Formulár obsahuje chyby. Prosím, skontrolujte vyplnené údaje.";
+    // messageElement.className = "error";
+    // messageElement.style.display = "block";
+});
